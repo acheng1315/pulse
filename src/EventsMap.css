@@ -1,0 +1,238 @@
+.EventsMap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.EventsMap-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.EventsMap-filter {
+  background: #f4f8fd;
+  border: 1.5px solid #e6eaf0;
+  color: #222;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.EventsMap-filter.active {
+  background: #6ca0f6;
+  color: #fff;
+  border: 1.5px solid #6ca0f6;
+}
+
+.leaflet-container {
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.EventsMap-filterBtn {
+  background: #6ca0f6;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.EventsMap-filterBtn:hover {
+  background: #4886e5;
+}
+
+.EventsMap-filterPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #f4f8fd;
+  border: 1.5px solid #e6eaf0;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.EventsMap-filterOption {
+  font-size: 1rem;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.EventsMap-filterCard {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 320px;
+  max-width: 400px;
+  align-items: flex-start;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  min-height: 320px;
+}
+
+.EventsMap-filterGroup {
+  width: 100%;
+}
+
+.EventsMap-filterTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #6ca0f6;
+  margin-bottom: 0.5rem;
+}
+
+.EventsMap-filterOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
+.EventsMap-dateSelect {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #e6eaf0;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+.EventsMap-sectionTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.EventsMap-pastList {
+  list-style: disc inside;
+  color: #888;
+  font-size: 1rem;
+  margin: 0.5rem 0 0 1rem;
+  padding: 0;
+}
+
+.EventsMap-filterOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadein 0.3s;
+  box-sizing: border-box;
+  padding-top: 90px; /* space for filter button */
+}
+
+.pulse-animate {
+  animation: pulseBtn 0.4s;
+}
+@keyframes pulseBtn {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+.EventsMap-closeOverlay {
+  margin-top: 1.5rem;
+  background: #6ca0f6;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  align-self: flex-end;
+}
+.EventsMap-closeOverlay:hover {
+  background: #4886e5;
+}
+
+.EventsMap-featured {
+  background: #eaf3fe;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(108,160,246,0.08);
+  padding: 1.2rem 2rem;
+  margin: 1.5rem auto 1.5rem auto;
+  max-width: 420px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+.EventsMap-featuredTitle {
+  color: #6ca0f6;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+.EventsMap-featuredName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+}
+.EventsMap-featuredDate {
+  font-size: 1rem;
+  color: #555;
+}
+
+.EventsMap-mapWrap {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 700px) {
+  .EventsMap-filterCard {
+    min-width: 90vw;
+    max-width: 95vw;
+    padding: 1.2rem 0.5rem;
+  }
+  .EventsMap-featured {
+    max-width: 95vw;
+    padding: 1rem 0.7rem;
+  }
+  .EventsMap-mapWrap {
+    max-width: 98vw;
+  }
+  .leaflet-container {
+    min-width: 0;
+    width: 100vw !important;
+    height: 300px !important;
+  }
+} 
