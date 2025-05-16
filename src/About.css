@@ -4,26 +4,54 @@
   align-items: center;
   justify-content: center;
   padding: 2rem 0;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  margin-top: -90px; /* Offset the nav bar height */
+  padding-top: 90px; /* Add padding to compensate for the negative margin */
 }
 
-.About.animated-bg {
+.About-background-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2;
+  object-fit: cover;
+}
+
+.About::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.About-content {
   position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-  background: linear-gradient(120deg, #eaf3fe 0%, #fff 100%);
+  z-index: 1;
+  width: 100%;
 }
 
 .About-logo {
     align-self: flex-start;    
-  width: 60px;
-  height: 60px;
-  margin-bottom: -5;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 0;
   margin-right: 1.2rem;
   z-index: 2;
   display: block;
   position: absolute;
-  top: 0px;
-  right: 10px;
+  bottom: 5%;
+  right: 5%;
 }
 
 .About-title {
@@ -33,15 +61,17 @@
   font-weight: 800;
   letter-spacing: 1px;
   z-index: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .About-description {
   font-size: 1.18rem;
-  color: #222;
+  color: #ffffff;
   max-width: 540px;
   text-align: center;
   margin: 0 auto 2.2rem auto;
   z-index: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .About-founders-title {
@@ -50,6 +80,7 @@
   font-weight: 700;
   margin-bottom: 1.2rem;
   z-index: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .About-founders {
@@ -61,9 +92,10 @@
 }
 
 .About-founder-card {
-  background: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
   border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(108,160,246,0.10);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
   padding: 1.2rem 2rem;
   min-width: 180px;
   text-align: center;
@@ -73,23 +105,25 @@
 }
 .About-founder-card:hover {
   transform: translateY(-8px) scale(1.04);
-  box-shadow: 0 6px 32px rgba(108,160,246,0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 .About-founder-name {
   font-size: 1.2rem;
   font-weight: 700;
   color: #6ca0f6;
   margin-bottom: 0.2rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 .About-founder-role {
   font-size: 1.05rem;
-  color: #222;
+  color: #ffffff;
   font-weight: 600;
   margin-bottom: 0.3rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 .About-founder-resp {
   font-size: 0.98rem;
-  color: #555;
+  color: #ffffff;
 }
 
 .About-founder-img {
@@ -98,8 +132,8 @@
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 0.7rem;
-  border: 2.5px solid #eaf3fe;
-  background: #f4f8fd;
+  border: 2.5px solid rgba(108, 160, 246, 0.3);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .About-img-instructions {
@@ -168,9 +202,10 @@
 }
 
 .About-description-card {
-  background: #f4f8fd;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
   border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(108,160,246,0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
   padding: 2rem 2rem 1.5rem 2rem;
   margin: 0 auto 2.5rem auto;
   max-width: 600px;
@@ -179,8 +214,17 @@
 .About-founders-title-large {
   font-size: 2.1rem;
   margin-bottom: 1.5rem;
+  color: #6ca0f6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .About-section--founders {
   margin-top: 3.5rem;
+}
+
+.About-founderName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #6ca0f6;
+  margin: 0.5rem 0;
 } 

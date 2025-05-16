@@ -40,34 +40,48 @@ const About = () => {
 
   return (
     <div className="About">
-      <section
-        className={`About-section About-section--desc animate-fadein${descFade ? ' About-section--fade' : ''}`}
-        ref={descRef}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="About-background-video"
+        preload="auto"
+        quality="high"
+        style={{ imageRendering: 'high-quality' }}
       >
-        <h1 className="About-title">Pulse, LLC</h1>
-        <div className="About-description-card">
-          <p className="About-description">
-            Pulse is a campus-centered event discovery platform that connects students on campus to the vibrant world of live arts, music, and cultural events around them, mapping these events. Students can select their preferences and get matched with performances, jam sessions, gallery openings, theater shows, and open mics happening right on their campus, all visualized through an interactive map.<br/><br/>
-            By blending real-time location services with personalized event recommendations based on users' interests and activity history, Pulse makes finding (and attending) great artistic experiences easy, spontaneous, and social.
-          </p>
-        </div>
-      </section>
-      <section
-        className="About-section About-section--founders animate-fadein"
-        ref={foundersRef}
-      >
-        <h2 className="About-founders-title About-founders-title-large">Meet the Founders</h2>
-        <div className="About-founders">
-          {founders.map((f, i) => (
-            <div className="About-founder-card animate-slideup" style={{ animationDelay: `${0.2 + i * 0.15}s` }} key={f.name}>
-              <img src={f.img} alt={f.name + ' portrait'} className="About-founder-img" />
-              <div className="About-founder-name">{f.name}</div>
-              <div className="About-founder-role">{f.role}</div>
-              <div className="About-founder-resp">{f.responsibilities}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+        <source src={process.env.PUBLIC_URL + '/background.mp4'} type="video/mp4" />
+      </video>
+      <div className="About-content">
+        <section
+          className={`About-section About-section--desc animate-fadein${descFade ? ' About-section--fade' : ''}`}
+          ref={descRef}
+        >
+          <h1 className="About-title">Pulse, LLC</h1>
+          <div className="About-description-card">
+            <p className="About-description">
+              Pulse is a campus-centered event discovery platform that connects students on campus to the vibrant world of live arts, music, and cultural events around them, mapping these events. Students can select their preferences and get matched with performances, jam sessions, gallery openings, theater shows, and open mics happening right on their campus, all visualized through an interactive map.<br/><br/>
+              By blending real-time location services with personalized event recommendations based on users' interests and activity history, Pulse makes finding (and attending) great artistic experiences easy, spontaneous, and social.
+            </p>
+          </div>
+        </section>
+        <section
+          className="About-section About-section--founders animate-fadein"
+          ref={foundersRef}
+        >
+          <h2 className="About-founders-title About-founders-title-large">Meet the Founders</h2>
+          <div className="About-founders">
+            {founders.map((f, i) => (
+              <div className="About-founder-card animate-slideup" style={{ animationDelay: `${0.2 + i * 0.15}s` }} key={f.name}>
+                <img src={f.img} alt={f.name + ' portrait'} className="About-founder-img" />
+                <div className="About-founder-name">{f.name}</div>
+                <div className="About-founder-role">{f.role}</div>
+                <div className="About-founder-resp">{f.responsibilities}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

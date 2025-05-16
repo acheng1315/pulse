@@ -4,6 +4,14 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { format, isThisWeek, isThisMonth, parseISO, isBefore } from 'date-fns';
 
+// Fix for default marker icons
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+});
+
 const CATEGORY_OPTIONS = [
   { key: 'arts', label: 'Arts Events' },
   { key: 'music', label: 'Music Events' },
@@ -214,9 +222,9 @@ const EventsMap = () => {
   return (
     <div className="EventsMap">
       <button
-        className={`EventsMap-filterBtn${showFilters ? ' active' : ''}`}
-        onClick={toggleFilterPanel}
         ref={filterBtnRef}
+        className="EventsMap-filterBtn"
+        onClick={toggleFilterPanel}
       >
         {showFilters ? 'Hide Filters' : 'Show Filters'}
       </button>
@@ -265,8 +273,8 @@ const EventsMap = () => {
       <div className="EventsMap-mapWrap">
         <MapContainer center={[43.7044, -72.2887]} zoom={15} style={{ height: '400px', width: '100%', borderRadius: '16px', marginTop: '1rem' }}>
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+            url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
           />
           {upcomingEvents.filter(e => filters.includes(e.category) && filterByDate(e)).map(event => (
             <Marker key={event.id} position={event.position} icon={blueIcon}>
