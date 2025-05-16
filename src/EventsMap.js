@@ -273,8 +273,8 @@ const EventsMap = () => {
       <div className="EventsMap-mapWrap">
         <MapContainer center={[43.7044, -72.2887]} zoom={15} style={{ height: '400px', width: '100%', borderRadius: '16px', marginTop: '1rem' }}>
           <TileLayer
-            attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-            url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
           />
           {upcomingEvents.filter(e => filters.includes(e.category) && filterByDate(e)).map(event => (
             <Marker key={event.id} position={event.position} icon={blueIcon}>
