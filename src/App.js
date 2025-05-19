@@ -6,7 +6,7 @@ import AddEvent from './AddEvent';
 import GiveFeedback from './GiveFeedback';
 
 const TABS = [
-  { label: 'About Pulse', key: 'about' },
+  { label: 'About PulseApp Campus', key: 'about' },
   { label: 'Events Map', key: 'map' },
   { label: 'Add an Event', key: 'add' },
   { label: 'Give Feedback!', key: 'feedback' },
@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <nav className="App-nav">
-        <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Pulse logo" className="About-logo" />
+        <img src={process.env.PUBLIC_URL + '/logo.png'} alt="PulseApp Campus logo" className="About-logo" />
         <div className="App-nav-tabs">
           {TABS.map(tab => (
             <button

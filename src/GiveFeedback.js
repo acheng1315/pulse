@@ -5,7 +5,7 @@ const GiveFeedback = () => (
   <div className="LeaveReview">
     <h2>Give Feedback!</h2>
     <iframe
-      title="Pulse App Feedback"
+      title="PulseApp Campus App Feedback"
       src="https://forms.gle/2fXdko8qNc98j8tD9"
       width="100%"
       height="700"

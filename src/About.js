@@ -57,11 +57,10 @@ const About = () => {
           className={`About-section About-section--desc animate-fadein${descFade ? ' About-section--fade' : ''}`}
           ref={descRef}
         >
-          <h1 className="About-title">Pulse, LLC</h1>
+          <h1 className="About-title">PulseApp Campus, LLC</h1>
           <div className="About-description-card">
             <p className="About-description">
-              Pulse is a campus-centered event discovery platform that connects students on campus to the vibrant world of live arts, music, and cultural events around them, mapping these events. Students can select their preferences and get matched with performances, jam sessions, gallery openings, theater shows, and open mics happening right on their campus, all visualized through an interactive map.<br/><br/>
-              By blending real-time location services with personalized event recommendations based on users' interests and activity history, Pulse makes finding (and attending) great artistic experiences easy, spontaneous, and social.
+              PulseApp Campus is a campus-centered event discovery platform that connects students on campus to the vibrant world of live arts, music, and cultural events around them, mapping these events. Students can select events based on their interests and activity history, PulseApp Campus makes finding (and attending) great artistic experiences easy, spontaneous, and social.
             </p>
           </div>
         </section>
