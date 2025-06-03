@@ -3,13 +3,11 @@ import './App.css';
 import About from './About';
 import EventsMap from './EventsMap';
 import AddEvent from './AddEvent';
-import GiveFeedback from './GiveFeedback';
 
 const TABS = [
   { label: 'About PulseApp Campus', key: 'about' },
   { label: 'Events Map', key: 'map' },
   { label: 'Add an Event', key: 'add' },
-  { label: 'Give Feedback!', key: 'feedback' },
 ];
 
 function App() {
@@ -35,7 +33,6 @@ function App() {
         {activeTab === 'about' && <About />}
         {activeTab === 'map' && <EventsMap />}
         {activeTab === 'add' && <AddEvent />}
-        {activeTab === 'feedback' && <GiveFeedback />}
       </main>
     </div>
   );

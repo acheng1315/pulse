@@ -22,6 +22,36 @@ const founders = [
   },
 ];
 
+const features = [
+  {
+    title: 'Event Discovery',
+    description: 'Find events tailored to your interests and preferences',
+    icon: '🎯',
+  },
+  {
+    title: 'Interactive Map',
+    description: 'Visualize events across campus with our interactive map',
+    icon: '🗺️',
+  },
+  {
+    title: 'Real-time Updates',
+    description: 'Stay informed with live event updates and notifications',
+    icon: '⚡',
+  },
+  {
+    title: 'Social Integration',
+    description: 'Connect with friends and share events seamlessly',
+    icon: '🤝',
+  },
+];
+
+const stats = [
+  { value: '100+', label: 'Active Users', icon: '👥' },
+  { value: '30+', label: 'Events Listed', icon: '📅' },
+  { value: '3', label: 'Campus Locations', icon: '📍' },
+  { value: '24/7', label: 'Support Available', icon: '🛟' },
+];
+
 const About = () => {
   const descRef = useRef();
   const foundersRef = useRef();
@@ -64,6 +94,41 @@ const About = () => {
             </p>
           </div>
         </section>
+
+        <section className="About-section About-section--features animate-fadein">
+          <h2 className="About-section-title">Our Features</h2>
+          <div className="About-features">
+            {features.map((feature, index) => (
+              <div 
+                key={feature.title} 
+                className="About-feature-card animate-slideup"
+                style={{ animationDelay: `${0.2 + index * 0.15}s` }}
+              >
+                <div className="About-feature-icon">{feature.icon}</div>
+                <h3 className="About-feature-title">{feature.title}</h3>
+                <p className="About-feature-description">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="About-section About-section--stats animate-fadein">
+          <h2 className="About-section-title">By The Numbers</h2>
+          <div className="About-stats">
+            {stats.map((stat, index) => (
+              <div 
+                key={stat.label} 
+                className="About-stat-card animate-slideup"
+                style={{ animationDelay: `${0.3 + index * 0.15}s` }}
+              >
+                <div className="About-stat-icon">{stat.icon}</div>
+                <div className="About-stat-value">{stat.value}</div>
+                <div className="About-stat-label">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section
           className="About-section About-section--founders animate-fadein"
           ref={foundersRef}
